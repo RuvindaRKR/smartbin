@@ -11,6 +11,7 @@ namespace smartbin.Data
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public DbSet<BinDetail> bindetail_tbl { get; set; }
+        public DbSet<Feedback> feedback { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
