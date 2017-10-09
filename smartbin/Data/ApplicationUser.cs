@@ -9,5 +9,10 @@ namespace smartbin.Data
     // Add profile data for application users by adding properties to the ApplicationUser class
     public class ApplicationUser : IdentityUser
     {
+        public string fullName { get; set; }
+        public string areaID { get; set; }
+        public string role { get; set; }
+        public byte[] userImage { get; set; }
+
     }
 }
