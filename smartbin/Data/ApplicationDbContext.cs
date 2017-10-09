@@ -14,6 +14,13 @@ namespace smartbin.Data
         public DbSet<Feedback> feedback { get; set; }
         public DbSet<Workforce> workforce_tbl { get; set; }
         public DbSet<working> working_tbl { get; set; }
+        public DbSet<mon> mon_binLevel_tbl { get; set; }
+        public DbSet<tue> tue_binLevel_tbl { get; set; }
+        public DbSet<wen> wen_binLevel_tbl { get; set; }
+        public DbSet<thu> thu_binLevel_tbl { get; set; }
+        public DbSet<fri> fri_binLevel_tbl { get; set; }
+        public DbSet<sat> sat_binLevel_tbl { get; set; }
+        public DbSet<sun> sun_binLevel_tbl { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {

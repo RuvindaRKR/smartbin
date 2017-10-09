@@ -11,9 +11,10 @@ using System;
 namespace smartbin.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171009082820_sat_binLevel_tbl")]
+    partial class sat_binLevel_tbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -393,46 +394,6 @@ namespace smartbin.Data.Migrations
                     b.HasKey("binID");
 
                     b.ToTable("sat_binLevel_tbl");
-                });
-
-            modelBuilder.Entity("smartbin.Data.Models.sun", b =>
-                {
-                    b.Property<string>("binID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<double>("week_1_0930");
-
-                    b.Property<double>("week_1_1530");
-
-                    b.Property<double>("week_1_2130");
-
-                    b.Property<double>("week_2_0930");
-
-                    b.Property<double>("week_2_1530");
-
-                    b.Property<double>("week_2_2130");
-
-                    b.Property<double>("week_3_0930");
-
-                    b.Property<double>("week_3_1530");
-
-                    b.Property<double>("week_3_2130");
-
-                    b.Property<double>("week_4_0930");
-
-                    b.Property<double>("week_4_1530");
-
-                    b.Property<double>("week_4_2130");
-
-                    b.Property<double>("week_5_0930");
-
-                    b.Property<double>("week_5_1530");
-
-                    b.Property<double>("week_5_2130");
-
-                    b.HasKey("binID");
-
-                    b.ToTable("sun_binLevel_tbl");
                 });
 
             modelBuilder.Entity("smartbin.Data.Models.thu", b =>
