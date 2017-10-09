@@ -26,6 +26,7 @@ namespace smartbin.Data
         public DbSet<monthlvl> monthlvl_tbl { get; set; }
         public DbSet<SensorCheck> sensorCheck_tbl { get; set; }
         public DbSet<sms> smsfeedback_tbl { get; set; }
+        public DbSet<bindiss> bindis_tbl { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
