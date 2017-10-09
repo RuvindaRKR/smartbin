@@ -11,9 +11,10 @@ using System;
 namespace smartbin.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171009064931_add bin details ")]
+    partial class addbindetails
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -166,12 +167,6 @@ namespace smartbin.Data.Migrations
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
 
-                    b.Property<string>("areaID");
-
-                    b.Property<string>("fullName");
-
-                    b.Property<string>("role");
-
                     b.HasKey("Id");
 
                     b.HasIndex("NormalizedEmail")
@@ -253,24 +248,6 @@ namespace smartbin.Data.Migrations
                     b.HasKey("binID");
 
                     b.ToTable("bindetail_tbl");
-                });
-
-            modelBuilder.Entity("smartbin.Data.Models.Feedback", b =>
-                {
-                    b.Property<int>("fid")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("binid");
-
-                    b.Property<string>("cemail");
-
-                    b.Property<string>("feedback");
-
-                    b.Property<string>("feedbacktype");
-
-                    b.HasKey("fid");
-
-                    b.ToTable("feedback");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
