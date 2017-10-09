@@ -11,9 +11,10 @@ using System;
 namespace smartbin.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171009101851_dailylvl")]
+    partial class dailylvl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -393,26 +394,6 @@ namespace smartbin.Data.Migrations
                     b.HasKey("binID");
 
                     b.ToTable("mon_binLevel_tbl");
-                });
-
-            modelBuilder.Entity("smartbin.Data.Models.monthlvl", b =>
-                {
-                    b.Property<string>("areaID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<double>("BD");
-
-                    b.Property<double>("GL");
-
-                    b.Property<double>("PA");
-
-                    b.Property<double>("PL");
-
-                    b.Property<DateTime>("month");
-
-                    b.HasKey("areaID");
-
-                    b.ToTable("monthlvl_tbl");
                 });
 
             modelBuilder.Entity("smartbin.Data.Models.sat", b =>
