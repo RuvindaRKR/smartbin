@@ -22,6 +22,9 @@ namespace smartbin.Data
         public DbSet<sat> sat_binLevel_tbl { get; set; }
         public DbSet<sun> sun_binLevel_tbl { get; set; }
         public DbSet<dailyinput> dailyinput_tbl { get; set; }
+        public DbSet<dailylvl> dailylvl_tbl { get; set; }
+        public DbSet<monthlvl> monthlvl_tbl { get; set; }
+        public DbSet<SensorCheck> sensorCheck_tbl { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
