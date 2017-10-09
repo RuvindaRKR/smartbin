@@ -12,7 +12,7 @@ namespace smartbin.Data
         public string fullName { get; set; }
         public string areaID { get; set; }
         public string role { get; set; }
-
+        public byte[] userImage { get; set; }
 
     }
 }
