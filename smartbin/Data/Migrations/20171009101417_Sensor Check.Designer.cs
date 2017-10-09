@@ -11,9 +11,10 @@ using System;
 namespace smartbin.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171009101417_Sensor Check")]
+    partial class SensorCheck
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -277,25 +278,6 @@ namespace smartbin.Data.Migrations
                     b.ToTable("dailyinput_tbl");
                 });
 
-            modelBuilder.Entity("smartbin.Data.Models.dailylvl", b =>
-                {
-                    b.Property<string>("areaID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<double>("BD");
-
-                    b.Property<double>("GL");
-
-                    b.Property<double>("PA");
-
-                    b.Property<double>("PL");
-
-                    b.Property<DateTime>("date");
-
-                    b.HasKey("areaID");
-
-                    b.ToTable("dailylvl_tbl");
-                });
             modelBuilder.Entity("smartbin.Data.Models.Feedback", b =>
                 {
                     b.Property<int>("fid")
@@ -394,26 +376,6 @@ namespace smartbin.Data.Migrations
                     b.ToTable("mon_binLevel_tbl");
                 });
 
-            modelBuilder.Entity("smartbin.Data.Models.monthlvl", b =>
-                {
-                    b.Property<string>("areaID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<double>("BD");
-
-                    b.Property<double>("GL");
-
-                    b.Property<double>("PA");
-
-                    b.Property<double>("PL");
-
-                    b.Property<DateTime>("month");
-
-                    b.HasKey("areaID");
-
-                    b.ToTable("monthlvl_tbl");
-                });
-
             modelBuilder.Entity("smartbin.Data.Models.sat", b =>
                 {
                     b.Property<string>("binID")
@@ -454,7 +416,6 @@ namespace smartbin.Data.Migrations
                     b.ToTable("sat_binLevel_tbl");
                 });
 
-
             modelBuilder.Entity("smartbin.Data.Models.SensorCheck", b =>
                 {
                     b.Property<string>("binID")
@@ -470,7 +431,6 @@ namespace smartbin.Data.Migrations
 
                     b.ToTable("sensorCheck_tbl");
                 });
-
 
             modelBuilder.Entity("smartbin.Data.Models.sun", b =>
                 {

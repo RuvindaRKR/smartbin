@@ -11,9 +11,10 @@ using System;
 namespace smartbin.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171009102434_monthlvl_tbl")]
+    partial class monthlvl_tbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -296,6 +297,7 @@ namespace smartbin.Data.Migrations
 
                     b.ToTable("dailylvl_tbl");
                 });
+
             modelBuilder.Entity("smartbin.Data.Models.Feedback", b =>
                 {
                     b.Property<int>("fid")
@@ -453,24 +455,6 @@ namespace smartbin.Data.Migrations
 
                     b.ToTable("sat_binLevel_tbl");
                 });
-
-
-            modelBuilder.Entity("smartbin.Data.Models.SensorCheck", b =>
-                {
-                    b.Property<string>("binID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<double>("filedLevel_1");
-
-                    b.Property<double>("filedLevel_2");
-
-                    b.Property<DateTime>("filedTime");
-
-                    b.HasKey("binID");
-
-                    b.ToTable("sensorCheck_tbl");
-                });
-
 
             modelBuilder.Entity("smartbin.Data.Models.sun", b =>
                 {
