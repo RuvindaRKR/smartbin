@@ -14,6 +14,7 @@ namespace smartbin.Data
         public DbSet<Feedback> feedback { get; set; }
         public DbSet<Workforce> workforce_tbl { get; set; }
         public DbSet<working> working_tbl { get; set; }
+        public DbSet<dailyinput> dailyinput_tbl { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
