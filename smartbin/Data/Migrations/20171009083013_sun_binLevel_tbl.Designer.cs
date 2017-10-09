@@ -11,9 +11,10 @@ using System;
 namespace smartbin.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171009083013_sun_binLevel_tbl")]
+    partial class sun_binLevel_tbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -255,26 +256,6 @@ namespace smartbin.Data.Migrations
                     b.HasKey("binID");
 
                     b.ToTable("bindetail_tbl");
-                });
-
-            modelBuilder.Entity("smartbin.Data.Models.dailyinput", b =>
-                {
-                    b.Property<string>("binID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<double>("BD");
-
-                    b.Property<double>("GL");
-
-                    b.Property<double>("PA");
-
-                    b.Property<double>("PL");
-
-                    b.Property<string>("areaID");
-
-                    b.HasKey("binID");
-
-                    b.ToTable("dailyinput_tbl");
                 });
 
             modelBuilder.Entity("smartbin.Data.Models.Feedback", b =>
