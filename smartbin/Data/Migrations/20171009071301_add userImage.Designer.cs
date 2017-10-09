@@ -11,9 +11,10 @@ using System;
 namespace smartbin.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20171009071301_add userImage")]
+    partial class adduserImage
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -275,50 +276,6 @@ namespace smartbin.Data.Migrations
                     b.ToTable("feedback");
                 });
 
-            modelBuilder.Entity("smartbin.Data.Models.Workforce", b =>
-                {
-                    b.Property<int>("userID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Name");
-
-                    b.Property<string>("areaID");
-
-                    b.Property<string>("contactNo");
-
-                    b.Property<string>("email");
-
-                    b.Property<byte[]>("image");
-
-                    b.Property<string>("pWord");
-
-                    b.Property<string>("uName");
-
-                    b.HasKey("userID");
-
-                    b.ToTable("workforce_tbl");
-                });
-
-            modelBuilder.Entity("smartbin.Data.Models.working", b =>
-                {
-                    b.Property<int>("workID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("binID");
-
-                    b.Property<DateTime>("time");
-
-                    b.Property<int?>("userID");
-
-                    b.HasKey("workID");
-
-                    b.HasIndex("binID");
-
-                    b.HasIndex("userID");
-
-                    b.ToTable("working_tbl");
-                });
-
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
                     b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole")
@@ -362,17 +319,6 @@ namespace smartbin.Data.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("smartbin.Data.Models.working", b =>
-                {
-                    b.HasOne("smartbin.Data.Models.BinDetail", "bin")
-                        .WithMany()
-                        .HasForeignKey("binID");
-
-                    b.HasOne("smartbin.Data.Models.Workforce", "user")
-                        .WithMany()
-                        .HasForeignKey("userID");
                 });
 #pragma warning restore 612, 618
         }
